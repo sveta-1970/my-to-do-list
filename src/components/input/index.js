@@ -1,9 +1,8 @@
 import React from "react";
 import "./input.css";
 
-const Input = ({onData}) => {
+const Input = ({ onData }) => {
   let data = "";
-
   return (
     <div className="flex">
       <input

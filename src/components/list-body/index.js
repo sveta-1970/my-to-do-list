@@ -2,15 +2,17 @@ import React from "react";
 import Edit from "../edit";
 import Delete from "../delete";
 
-const ListBody = () => {
-  const data = null;
+const ListBody = ({ dates }) => {
   return (
     <>
-      {Array.isArray(data) ? (
-        <div>
-          <></>
-          <span></span>
-        </div>
+      {Array.isArray(dates) ? (
+        dates.map((data, index) => {
+          return (
+            <div key={index + data}>
+              <span>data</span>
+            </div>
+          );
+        })
       ) : (
         <div>The task is absent</div>
       )}
