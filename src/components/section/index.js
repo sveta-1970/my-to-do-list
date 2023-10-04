@@ -11,11 +11,13 @@ export default class Section extends Component {
   };
 
   onData = (value) => {
-    this.setState((state) => {
-      return {
-        dates: [...state.dates, value],
-      };
-    });
+    if(value){
+      this.setState((state) => {
+        return {
+          dates: [...state.dates, value],
+        };
+      });
+    } else alert("Enter data");
   };
 
   render() {
