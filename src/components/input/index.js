@@ -1,9 +1,9 @@
 import React from "react";
 import "./input.css";
 
-const Input = ({ onData }) => {
+const Input = ({ inputData }) => {
   let data = "";
-  let input = null;
+  let input = "";
 
   return (
     <div className="flex">
@@ -18,9 +18,12 @@ const Input = ({ onData }) => {
       />
       <button
         className="btn-input"
+        name="save"
         onClick={() => {
-          onData(data);
-          input.value = "";
+          inputData(data);
+          if (input) {
+            input.value = "";
+          }
         }}
       >
         Save
