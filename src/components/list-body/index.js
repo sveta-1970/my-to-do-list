@@ -1,25 +1,29 @@
 import React from "react";
 import Button from "../buttons";
 
-const ListBody = ({ deleteData, dates }) => {
+const ListBody = ({ editData, deleteData, dates }) => {
   
   return (
     <>
       {Array.isArray(dates) && dates.length > 0 ? (
-        dates.map((data, index) => {
+        dates.map((data, i) => {
           return (
-            <div key={index + data} className="listbody">
+            <div key={i + data} className="listbody">
               <Button
                 name="edit"
                 classes="btn btn-primary mt-2 me-2"
-                //onClick={()=> onData("edit", data)}
+                data={data}
+                index={i}
+                action={editData}
               />
               <Button
                 name="delete"
                 classes="btn btn-danger mt-2 me-2"
-                onClick={() => deleteData(data, index)}
+                data={data}
+                index={i}
+                action={deleteData}
               />
-              <span>{data}</span>
+              <span>{i+1+". "}{data}</span>
             </div>
           );
         })

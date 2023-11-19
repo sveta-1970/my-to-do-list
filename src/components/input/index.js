@@ -21,10 +21,9 @@ const Input = ({ inputData }) => {
         name="save"
         onClick={() => {
           inputData(data);
-          if (input) {
-            input.value = "";
-          }
-        }}
+          input.value = "";
+        }
+      }
       >
         Save
       </button>
